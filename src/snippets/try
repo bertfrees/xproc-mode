@@ -1,0 +1,12 @@
+# contributor: Bert Frees
+# name: <p:try>...</p:try>
+# key: <p:try
+# --
+<p:try$1>
+  <p:group>
+    $0
+  </p:group>
+  <p:catch>
+    
+  </p:catch>
+</p:try>

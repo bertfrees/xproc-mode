@@ -1,0 +1,5 @@
+# contributor: Bert Frees
+# name: <p:variable>...</p:variable>
+# key: <p:variable
+# --
+<p:variable name="$1" select="$2"$3>$0</p:variable>

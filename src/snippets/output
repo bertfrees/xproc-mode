@@ -1,0 +1,7 @@
+# contributor: Bert Frees
+# name: <p:output>...</p:output>
+# key: <p:output
+# --
+<p:output port="$1">
+  $0
+</p:output>

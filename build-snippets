@@ -1,0 +1,40 @@
+#!/usr/local/bin/clj
+
+(def steps
+  (with-open [r (java.io.PushbackReader. (clojure.java.io/reader "src/steps.clj"))]
+    (binding [*read-eval* false]
+    (read r))))
+
+(doseq [[name spec] steps]
+  (let [header
+          (str "# contributor: Bert Frees\n"
+               "# name: <p:" name ">...</p:" name ">\n"
+               "# key: <p:" name "\n"
+               "# --")
+        field (atom 0)
+        field++ (fn [] (swap! field inc))
+        attrs
+          (str
+            (clojure.string/join ""
+              (for [option (:options spec)]
+                (str "${" (field++) ": " option "=\"${" (field++) ":$$(progn (auto-complete-1 :triggered 'trigger-key) nil)}\"}")))
+            "$" (field++))
+        inputs
+          (clojure.string/join ""
+            (for [input (:inputs spec)]
+              (str "${" (field++) ":\n"
+                   "  <p:input port=\"" input "\">\n"
+                   "    ${" (field++) ":<p:empty/>}\n"
+                   "  </p:input>}")))
+        with-options
+          (clojure.string/join ""
+            (for [option (:options spec)]
+              (str "${" (field++) ":\n"
+                   "  <p:with-option name=\"" option "\" select=\"$" (field++) "\">\n"
+                   "    ${" (field++) ":<p:empty/>}\n"
+                   "  </p:with-option>}")))
+        ]
+  (spit (str "snippets/xproc-mode/" name)
+        (str header "\n"
+             "<p:" name attrs "$" (field++) ">" inputs with-options "\n"
+             "</p:" name ">"))))

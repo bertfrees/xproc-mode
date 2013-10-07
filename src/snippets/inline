@@ -1,0 +1,7 @@
+# contributor: Bert Frees
+# name: <p:inline>...</p:inline>
+# key: <p:inline
+# --
+<p:inline>
+  $0
+</p:inline>

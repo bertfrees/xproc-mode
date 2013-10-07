@@ -1,0 +1,7 @@
+# contributor: Bert Frees
+# name: <p:input>...</p:input>
+# key: <p:input
+# --
+<p:input port="$1">
+  $0
+</p:input>

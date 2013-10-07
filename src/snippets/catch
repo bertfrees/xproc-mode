@@ -1,0 +1,7 @@
+# contributor: Bert Frees
+# name: <p:catch>...</p:catch>
+# key: <p:catch
+# --
+<p:catch$1>
+  $0
+</p:catch>

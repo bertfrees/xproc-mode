@@ -1,0 +1,5 @@
+# contributor: Bert Frees
+# name: <p:option>...</p:option>
+# key: <p:option
+# --
+<p:option name="$1"$2>$0</p:option>

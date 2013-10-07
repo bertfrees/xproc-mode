@@ -1,0 +1,5 @@
+# contributor: Bert Frees
+# name: <p:pipe .../>
+# key: <p:pipe
+# --
+<p:pipe step="$1" port="$2"/>

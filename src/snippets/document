@@ -1,0 +1,5 @@
+# contributor: Bert Frees
+# name: <p:document .../>
+# key: <p:document
+# --
+<p:document href="$1"/>

@@ -1,0 +1,5 @@
+# contributor: Bert Frees
+# name: <p:with-option>...</with-option>
+# key: <p:with-option
+# --
+<p:with-option name="$1" select="$2"$3>$0</p:with-option>

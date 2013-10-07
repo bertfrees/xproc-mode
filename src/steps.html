@@ -1,0 +1,754 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <body>
+        <div id="wrapper">
+            <div id="masthead">
+                <h1>XProc Steps</h1>
+            </div>
+            <div id="content">
+                <table id="steps" width="90%" summary="Summary of the XProc steps">
+                    <caption>
+                        Summary of the XProc steps
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Step Name</th>
+                            <th scope="col">Input Ports</th>
+                            <th scope="col">Output Ports</th>
+                            <th scope="col">Options</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">Summary of the XProc Steps by Roger L. Costello</td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr class="alt" style="">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.add-attribute">add-attribute</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>match (required): XPath expression</p>
+                                <p>attribute-name (required)</p>
+                                <p>attribute-value (required)</p>
+                            </td>
+                            <td>
+                                <p>Adds an attribute/value to the element(s) identified by the match pattern</p>
+                            </td>
+                        </tr>
+                        <tr class="" style="">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.add-xml-base">add-xml-base</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>all (boolean, default is false)</p>
+                                <p>relative (boolean, default is true)</p>
+                            </td>
+                            <td>
+                                <p>Adds an xml:base attribute to the root element, its value is the URL of the 
+                                   document on the source port. Use "all" to add xml:base to all the elements in
+                                   the document.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt" style="">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.compare">compare</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                                <p>alternate</p>
+                            </td>
+                            <td>
+                                <p>result</p>
+                            </td>
+                            <td>
+                                <p>fail-if-not-equal (boolean, default is false)</p>
+                            </td>
+                            <td>
+                                <p>Compares the document on the source port with the document on the alternate port.</p>
+                            </td>
+                        </tr>
+                        <tr class="" style="">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.count">count</a></td>
+                            <td>
+                                <p>source (primary, sequence)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>limit (integer, defaults to 0)</p>
+                            </td>
+                            <td>
+                                <p>Count the sequence of documents on the source input port. Use limit to cutoff the
+                                   counting (limit=0 means count all)</p>
+                            </td>
+                        </tr>
+                        <tr class="alt" style="">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.delete">delete</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>match (required): XPath expression</p>
+                            </td>
+                            <td>
+                                <p>Deletes the element(s) and/or attribute(s) identified by the XPath expression.</p>
+                            </td>
+                        </tr>
+                        <tr class="" style="">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.directory-list">directory-list</a></td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>path (required): URI; location of the directory</p>
+                                <p>include-filter: regex expression</p>
+                                <p>exclude-filter: regex expression</p>
+                            </td>
+                            <td>
+                                <p>Produces a list of the file names and folder names of a specified directory.
+                                   Can restrict the listed files/folders using the include and exclude filters.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt" style="">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.error">error</a></td>
+                            <td>
+                                <p>source (*not* primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary, sequence)</p>
+                            </td>
+                            <td>
+                                <p>code (required): QName</p>
+                            </td>
+                            <td>
+                                <p>Generates a dynamic error. The error message is what you put on the source input port.</p>
+                            </td>
+                        </tr>
+                        <tr class="" style="">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.escape-markup">escape-markup</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>cdata-section-elements: list of element names</p>
+                                <p>doctype-public: string</p>
+                                <p>doctype-system: URL</p>
+                                <p>escape-uri-attributes: boolean, default is false</p>
+                                <p>include-content-type: boolean, default is true</p>
+                                <p>indent: boolean, default is false</p>
+                                <p>media-type: a MIME type</p>
+                                <p>method: string, default is 'xml'</p>
+                                <p>omit-xml-declaration: boolean, default is true</p>
+                                <p>standalone: true, false, or omit, default is omit</p>
+                                <p>undeclare-prefixes: boolean</p>
+                                <p>version: string, default is '1.0'</p>
+                            </td>
+                            <td>
+                                <p>This escapes all the markup between the root element's start tag 
+                                and end tag. It does not escape the root element.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt" style="">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.exec">exec</a></td>
+                            <td>
+                                <p>source (primary, sequence)</p>
+                            </td>
+                            <td>
+                                <p>result (primary), the result is wrapped in a <a href="http://www.w3.org/TR/xproc/#cv.result">&lt;c:result&gt;</a> element</p>
+                                <p>errors</p>
+                                <p>exit-status</p>
+                            </td>
+                            <td>
+                                <p>command (required): the name of the command to be executed</p>
+                                <p>args: the p:exec step executes the command passed on command with the arguments passed on args</p>
+                                <p>cwd: (current working directory) use this to specify the directory where you want the command run</p>
+                                <p>source-is-xml: boolean, default is true</p>
+                                <p>result-is-xml: boolean, default is true</p>
+                                <p>wrap-result-lines: boolean, default is false</p>
+                                <p>errors-is-xml: boolean, default is false</p>
+                                <p>wrap-error-lines: boolean, default is false</p>
+                                <p>path-separator: string</p>
+                                <p>failure-threshold: integer</p>
+                                <p>arg-separator: string, default is a single space</p>
+                                <p>byte-order-mark: boolean</p>
+                                <p>cdata-section-elements: string, default is the empty string</p>
+                                <p>doctype-public: string</p>
+                                <p>doctype-system: URL</p>
+                                <p>encoding: string</p>
+                                <p>escape-uri-attributes: boolean, default is false</p>
+                                <p>include-content-type: boolean, default is true</p>
+                                <p>indent: boolean, default is false</p>
+                                <p>media-type: a MIME type</p>
+                                <p>method: string, default is 'xml'</p>
+                                <p>omit-xml-declaration: boolean, default is true</p>
+                                <p>standalone: true, false, or omit, default is omit</p>
+                                <p>undeclare-prefixes: boolean</p>
+                                <p>version: string, default is '1.0'</p>
+                            </td>
+                            <td>
+                                <p>This runs an external command; the data on the source port is passed 
+                                   to the command as standard input, the standard output of the command 
+                                   is put on the result port and the error port has errors.</p>
+                            </td>
+                        </tr>
+                        <tr class="" style="">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.filter">filter</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary, sequence)</p>
+                            </td>
+                            <td>
+                                <p>select (required): XPath expression</p>
+                            </td>
+                            <td>
+                                <p>Selects for output portions of the source document; the portions 
+                                   are identified by an XPath expression.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt" style="">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.hash">hash</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                                <p>parameters: input, kind="parameter"; some hash algorithms require arguments, this is used to provide those arguments (settings)</p>
+                            </td>
+                            <td>
+                                <p>result (primary, sequence)</p>
+                            </td>
+                            <td>
+                                <p>value (required): string; the hash algorithm takes this string and generates a hash of it</p>
+                                <p>algorithm (required): 'crc' or 'md' or 'sha' (the name of a hash algorithm)</p>
+                                <p>match (required): XSLT match pattern; the element(s) identified is replaced by the hash value that is generated</p>
+                                <p>version: if the algorthm is 'crc' then version must be 32, 
+                                            if the algorthm is 'md' then version must be 5,
+                                            if the algorthm is 'sha' then version must be 1</p>
+                            </td>
+                            <td>
+                                <p>Makes a digital finger print and embeds it within the document.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.http-request">http-request</a></td>
+                            <td>
+                                <p>source (primary): the data binded on this port must be a <a href="http://www.w3.org/TR/xproc/#cv.request">&lt;c:request&gt;</a> element</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>byte-order-mark: boolean</p>
+                                <p>cdata-section-elements: string, default is the empty string</p>
+                                <p>doctype-public: string</p>
+                                <p>doctype-system: URL</p>
+                                <p>encoding: string</p>
+                                <p>escape-uri-attributes: boolean, default is false</p>
+                                <p>include-content-type: boolean, default is true</p>
+                                <p>indent: boolean, default is false</p>
+                                <p>media-type: a MIME type</p>
+                                <p>method: string, default is 'xml'</p>
+                                <p>omit-xml-declaration: boolean, default is true</p>
+                                <p>standalone: true, false, or omit, default is omit</p>
+                                <p>undeclare-prefixes: boolean</p>
+                                <p>version: string, default is '1.0'</p>
+                            </td>
+                            <td>
+                                <p>Enables a step to interact with web services (both REST and SOAP-based web services). 
+                                   You can GET and POST to a web service.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.identity">identity</a></td>
+                            <td>
+                                <p>source (primary, sequence)</p>
+                            </td>
+                            <td>
+                                <p>result (primary, sequence)</p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p>Makes a verbatim copy of its input available on its output.  Not very exciting, 
+                                   but remarkably useful (e.g. it can be used to generate data).</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.insert">insert</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                                <p>insertion (sequence): the documents to insert </p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>match:  an XPath expression; the matching elements</p>
+                                <p>position:  first-child, last-child, before, or after; where to insert the documents</p>
+                            </td>
+                            <td>
+                                <p>Inserts the document on the insertion port into the document on the source port. 
+                                   It is inserted at the point identified by the options.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.label-elements">label-elements</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>attribute:  QName, default is xml:id; the name of the attribute</p>
+                                <p>label:  string; the value of the attribute</p>
+                                <p>match:  XPath expression, default is '*'; the elements to be attributed</p>
+                                <p>replace:  boolean, default is true; true means an existing label should be overwritten</p>
+                            </td>
+                            <td>
+                                <p>Generates a label for each matched element and stores that label in an attribute.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.load">load</a></td>
+                            <td>
+                                <p></p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>href (required):  URI; the location of the XML</p>
+                                <p>dtd-validate:  boolean, default is false; true means validate the XML against a DTD</p>
+                            </td>
+                            <td>
+                                <p>Inputs an XML document specified by a URL.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.make-absolute-uris">make-absolute-uris</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>match (required):  XPath expression; the location of an element or attribute</p>
+                                <p>base-uri:  URL</p>
+                            </td>
+                            <td>
+                                <p>Replaces an element or attribute containing a relative URL with its absolute URL.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.namespace-rename">namespace-rename</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>from:  URL</p>
+                                <p>to:  URL</p>
+                                <p>apply-to:  all, elements, or attributes</p>
+                            </td>
+                            <td>
+                                <p>Changes a namespace URL to a new URL.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.pack">pack</a></td>
+                            <td>
+                                <p>source (primary, sequence)</p>
+                                <p>alternate (sequence): the second document</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>wrapper (required):  QName: an element by this name will wrap the documents</p>
+                            </td>
+                            <td>
+                                <p>Merges the document sequences on the two input ports in a pair-wise fashion and wraps the merged documents.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.parameters">parameters</a></td>
+                            <td>
+                                <p>parameters (sequence, kind="parameter")</p>
+                            </td>
+                            <td>
+                                <p>result (kind="parameter")</p>
+                            </td>
+                            <td>
+                                
+                            </td>
+                            <td>
+                                <p>Wraps in &lt;p:param-set&gt; a sequence of &lt;c:param&gt; elements.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.rename">rename</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>match (required):  XSLT match pattern; item to be renamed</p>
+                                <p>new-name (required):  QName; the new name for the item</p>
+                            </td>
+                            <td>
+                                <p>Used to rename elements, attributes, or processing-instructions.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.replace">replace</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                                <p>replacement: the new XML</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>match (required):  XSLT match pattern; the element to replace</p>
+                            </td>
+                            <td>
+                                <p>Replaces matching elements in its primary input with the document in the replacement port.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.set-attributes">set-attributes</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                                <p>attributes: the document containing the attributes to be copied</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>match (required):  XSLT match pattern; the elements to receive attributes</p>
+                            </td>
+                            <td>
+                                <p>Copies the attributes on the root element of the attributes port to each element identified by the match pattern.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.sink">sink</a></td>
+                            <td>
+                                <p>source (primary, sequence)</p>
+                            </td>
+                            <td>
+                                
+                            </td>
+                            <td>
+                                
+                            </td>
+                            <td>
+                                <p>Accepts a sequence of documents and discards them. It has no output.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.split-sequence">split-sequence</a></td>
+                            <td>
+                                <p>source (primary, sequence)</p>
+                            </td>
+                            <td>
+                                <p>matched (primary, sequence)</p>
+                                <p>not-matched (sequence)</p>
+                            </td>
+                            <td>
+                                <p>test (required):  XPath expression; each document is tested using this XPath expression</p>
+                                <p>initial-only: boolean, defaults to false; if this is set to true then the first document that 
+                                   fails the test, and all subsequent documents, are output on the not-matched port </p>
+                            </td>
+                            <td>
+                                <p>Divides up a sequence of documents; the documents that meet a boolean expression exit on the 
+                                   matched output port, the other exit on the not-matched output port.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.store">store</a></td>
+                            <td>
+                                <p>source (primary, sequence)</p>
+                            </td>
+                            <td>
+                                <p>result (not primary)</p>
+                            </td>
+                            <td>
+                                <p>href (required):  URL; the XML document on the source input port is stored to this URL.</p>
+                                <p>byte-order-mark: boolean</p>
+                                <p>cdata-section-elements: list of QNames, default is the empty string</p>
+                                <p>doctype-public: string</p>
+                                <p>doctype-system: URL</p>
+                                <p>encoding: string</p>
+                                <p>escape-uri-attributes: boolean, default is false</p>
+                                <p>include-content-type: boolean, default is true</p>
+                                <p>indent: boolean, default is false</p>
+                                <p>media-type: a MIME type</p>
+                                <p>method: string, default is 'xml'</p>
+                                <p>omit-xml-declaration: boolean, default is true</p>
+                                <p>standalone: true, false, or omit, default is omit</p>
+                                <p>undeclare-prefixes: boolean</p>
+                                <p>version: string, default is '1.0'</p>
+                            </td>
+                            <td>
+                                <p>Stores a serialized version of its input to a URI.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.string-replace">string-replace</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>match (required):  XSLT match pattern; the elements that are to be replaced with string data</p>
+                                <p>replace (required): an XPath expression; the string data of the element(s) identified will replace 
+                                   the elements identified by the match pattern</p>
+                            </td>
+                            <td>
+                                <p>Replaces matched elements with string data.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.unescape-markup">unescape-markup</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>namespace:  a URI</p>
+                                <p>content-type: a MIME type, default is application/xml</p>
+                                <p>encoding: string</p>
+                                <p>charset: string</p>
+                            </td>
+                            <td>
+                                <p>Does the opposite of p:escape-markup; it converts escaped markup to markup, e.g. &amp;lt; is converted to &lt;</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.unwrap">unwrap</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>match (required):  an XSLT match pattern</p>
+                            </td>
+                            <td>
+                                <p>Replaces matched elements with their children.  In other words, it deletes the current element but retains its children.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.validate-with-relax-ng">validate-with-relax-ng</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                                <p>schema</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>dtd-attribute-values:  true or false, default is false</p>
+                                <p>dtd-id-idref-warnings:  true or false, default is false</p>
+                                <p>assert-valid:  true or false (default is true); assert-valid="true" means you want an error thrown if the instance document fails validation</p>
+                            </td>
+                            <td>
+                                <p>Performs RELAX NG validation on the input document.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.validate-with-schematron">validate-with-schematron</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                                <p>schema</p>
+                                <p>parameters (kind="parameter")</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                                <p>report (sequence)</p>
+                            </td>
+                            <td>
+                                <p>phase:  the identifier of a schematron phase; its default is #ALL (all phases are selected for execution)</p>
+                                <p>assert-valid:  true or false (default is true); assert-valid="true" means you want an error thrown if the instance document fails validation</p>
+                            </td>
+                            <td>
+                                <p>Performs Schematron validation on the input document.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.validate-with-xml-schema">validate-with-xml-schema</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                                <p>schema</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>mode:  strict or lax (default is strict)</p>
+                                <p>assert-valid:  true or false (default is true); assert-valid="true" means you want an error thrown if the instance document fails validation</p>
+                                <p>use-location-hints:  true or false (default is false)</p>
+                                <p>try-namespaces:  true or false (default is false)</p>
+                            </td>
+                            <td>
+                                <p>Performs XML Schema validation on the input document.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.wrap">wrap</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>match (required):  XSLT match pattern; identifies the elements to be wrapped</p>
+                                <p>wrapper (required):  QName; create an element with this name and use it to wrap the elements identified by match</p>
+                                <p>group-adjacent:  XPath expression</p>
+                            </td>
+                            <td>
+                                <p>Places an element around each element identified by the match pattern.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.wrap-sequence">wrap-sequence</a></td>
+                            <td>
+                                <p>source (primary, sequence)</p>
+                            </td>
+                            <td>
+                                <p>result (primary, sequence)</p>
+                            </td>
+                            <td>
+                                <p>wrapper (required):  QName; create an element with this name and use it to wrap the documents on the input port</p>
+                                <p>group-adjacent:  XPath expression</p>
+                            </td>
+                            <td>
+                                <p>Wraps the sequence of documents on the input port.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.www-form-urldecode">www-form-urldecode</a></td>
+                            <td>
+                                <p>No input port</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>value:  string, the x-www-form-urlencoded string </p>
+                            </td>
+                            <td>
+                                <p>Converts a x-www-form-urlencoded string into a set of parameters.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.www-form-urlencode">www-form-urlencode</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                                <p>parameters (kind="parameter")</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>match:  an XPath match pattern; the encoded string is placed in the nodes specified here</p>
+                            </td>
+                            <td>
+                                <p>Extracts the name/value pairs in a p:parameter-set and generates a x-www-form-urlencoded string, which is then inserted into the XML document.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.xinclude">xinclude</a></td>
+                            <td>
+                                <p>source (primary)</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                            </td>
+                            <td>
+                                <p>fixup-xml-base:  boolean, default is false</p>
+                                <p>fixup-xml-lang: boolean, default is false</p>
+                            </td>
+                            <td>
+                                <p>Pulls in (macro-substitutes) all the XML snippets referenced using xi:include.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.w3.org/TR/xproc/#c.xquery">xquery</a></td>
+                            <td>
+                                <p>source (primary, sequence)</p>
+                                <p>query </p>
+                                <p>parameters (kind="parameter")</p>
+                            </td>
+                            <td>
+                                <p>result (primary, sequence)</p>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <p>Executes an XQuery on one or more XML documents.</p>
+                            </td>
+                        </tr>
+                        <tr class="alt">
+                            <td><a href="http://www.w3.org/TR/xproc/#c.xslt">xslt</a></td>
+                            <td>
+                                <p>source (primary, sequence)</p>
+                                <p>stylesheet</p>
+                                <p>parameters (kind="parameter")</p>
+                            </td>
+                            <td>
+                                <p>result (primary)</p>
+                                <p>secondary (sequence)</p>
+                            </td>
+                            <td>
+                                <p>initial-mode:  QName</p>
+                                <p>template-name: QName</p>
+                                <p>output-base-uri: URI</p>
+                                <p>version: '1.0' or '2.0'</p>
+                            </td>
+                            <td>
+                                <p>Applies an XSLT 1.0 or 2.0 stylesheet to a document.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="footer">
+                <p>Last modified: July 18, 2009</p>
+            </div>
+        </div>
+    
+
+</body></html>

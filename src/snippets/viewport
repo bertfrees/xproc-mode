@@ -1,0 +1,7 @@
+# contributor: Bert Frees
+# name: <p:viewport>...</p:viewport>
+# key: <p:viewport
+# --
+<p:viewport match="$1"$2>
+  $0
+</p:viewport>

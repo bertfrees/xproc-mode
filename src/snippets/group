@@ -1,0 +1,7 @@
+# contributor: Bert Frees
+# name: <p:group>...</p:group>
+# key: <p:group
+# --
+<p:group$1>
+  $0
+</p:group>

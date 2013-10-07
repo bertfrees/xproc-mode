@@ -1,0 +1,5 @@
+# contributor: Bert Frees
+# name: <p:log .../>
+# key: <p:log
+# --
+<p:log port="$1"$2/>

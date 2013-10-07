@@ -1,0 +1,12 @@
+# contributor: Bert Frees
+# name: <p:choose>...</p:choose>
+# key: <p:choose
+# --
+<p:choose$1>
+  <p:when test="$2"$3>
+    $4
+  </p:when>
+  <p:otherwise>
+    $5
+  </p:otherwise>
+</p:choose>

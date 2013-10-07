@@ -35,13 +35,14 @@ Setup
         (yas-minor-mode)))))
 ```
 
-el-get recipe:
-
+el-get recipe
+-------------
 ```lisp
 (:name xproc-mode
        :type git
        :url "http://github.com/bertfrees/xproc-mode.git"
        :checkout "alpha"
        :depends (auto-complete)
+       :build (("make"))
        :prepare (autoload 'xproc-mode "xproc-mode" nil t))
 ```

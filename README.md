@@ -23,6 +23,7 @@ Setup
 (add-to-list 'auto-mode-alist '("\\.xpl$" . xproc-mode))
 (eval-after-load 'xproc-mode
   '(progn
+    (push "/path/to/xproc-mode/schema/schemas.xml" rng-schema-locating-files)
     (push "/path/to/xproc-mode/snippets" yas/snippet-dirs)
     (yas-reload-all)
     (add-hook 'xproc-mode-hook

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<locatingRules xmlns="http://thaiopensource.com/ns/locating-rules/1.0">
+    <uri pattern="*.xpl" typeId="XProc"/>
+    <namespace ns="http://www.w3.org/ns/xproc" typeId="XProc"/>
+    <documentElement prefix="p" localName="declare-step" typeId="XProc"/>
+    <documentElement prefix="p" localName="pipeline" typeId="XProc"/>
+    <documentElement prefix="p" localName="library" typeId="XProc"/>
+    <typeId id="XProc" uri="xproc.rnc"/>
+</locatingRules>

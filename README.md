@@ -33,3 +33,14 @@ Setup
         (auto-complete-mode t)
         (yas-minor-mode)))))
 ```
+
+el-get recipe:
+
+```lisp
+(:name xproc-mode
+       :type git
+       :url "http://github.com/bertfrees/xproc-mode.git"
+       :checkout "alpha"
+       :depends (auto-complete)
+       :prepare (autoload 'xproc-mode "xproc-mode" nil t))
+```

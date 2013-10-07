@@ -1,3 +1,4 @@
+(require 'nxml-mode)
 (require 'ac-xproc)
 
 (define-derived-mode xproc-mode nxml-mode "XProc"

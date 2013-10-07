@@ -1,4 +1,5 @@
 (require 'auto-complete)
+(require 'auto-complete-nxml)
 
 (defface ac-xproc-tag-candidate-face
   '((t (:inherit ac-candidate-face)))

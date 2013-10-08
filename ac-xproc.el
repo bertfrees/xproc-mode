@@ -18,7 +18,7 @@
          (string-value (lambda (elem) (replace-regexp-in-string "[ \t\n]+" " " (or (nth 2 elem) "")))))
     (with-temp-buffer
       (insert-file-contents-literally
-        (expand-file-name "src/steps.html" (file-name-directory load-file-name)))
+        (expand-file-name "steps.html" (file-name-directory load-file-name)))
       (let* ((tree (libxml-parse-html-region (point-min) (point-max)))
              (rows (funcall children 'tr
                      (car (funcall children 'tbody

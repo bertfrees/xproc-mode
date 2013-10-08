@@ -26,8 +26,17 @@ el-get users can install xproc-mode with the following recipe:
        :url "http://github.com/bertfrees/xproc-mode.git"
        :checkout "alpha"
        :depends (auto-complete auto-complete-nxml)
-       :build (("make"))
-       :prepare (autoload 'xproc-mode "xproc-mode" nil t))
+       :build (("make")))
+```
+
+### package.el
+xproc-mode is also available as an ELPA package. First you need to add
+`http://bertfrees.github.com/elpa/` to the list of repositories:
+```lisp
+(add-to-list 'package-archives '("bertfrees" . "http://bertfrees.github.com/elpa/packages/"))
+(package-initialize)
+(package-refresh-contents)
+(package-install 'xproc-mode)
 ```
 
 Setup

@@ -31,11 +31,9 @@ el-get users can install xproc-mode with the following recipe:
 
 ### package.el
 xproc-mode is also available as an ELPA package. First you need to add
-`http://bertfrees.github.com/elpa/` to the list of repositories:
+[bertfrees.github.com/elpa](http://bertfrees.github.com/elpa) to the list of repositories:
 ```lisp
 (add-to-list 'package-archives '("bertfrees" . "http://bertfrees.github.com/elpa/packages/"))
-(package-initialize)
-(package-refresh-contents)
 (package-install 'xproc-mode)
 ```
 

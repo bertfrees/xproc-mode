@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-CLOJURE := /usr/local/bin/clj
+CLOJURE := clojure
 PACKAGE_VERSION := 1.0.0alpha1
 
 all : snippets
